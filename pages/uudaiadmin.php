@@ -15,7 +15,7 @@
         .endow__add button{
             border: none;
             padding: 10px 20px;
-            background: #79B791;
+            background:rgb(0, 0, 0);
             border-radius: 5px;
             color: #fff;
             font-size: 15px;
@@ -24,7 +24,7 @@
         }
 
         .endow thead tr th {
-            background: #79B791;
+            background:rgb(0, 0, 0);
             color: #fff;
             font-size: 15px;
             font-weight: 600;
@@ -63,17 +63,17 @@
         }
 
         .endow ul li:first-child {
-            background: #2C73BA;
+            background:rgb(0, 0, 0);
             padding: 6px 10px;
         }
 
         .endow ul li:last-child {
-            background: #C82333;
+            background:rgb(0, 0, 0);
             padding: 6px 10px;
         }
 
         .endow td span {
-            background: #21BF06;
+            background:rgb(0, 0, 0);
             padding: 6px 10px;
             color: #fff;
             border-radius: 6px;
@@ -113,7 +113,7 @@
 
         .model__tbl th {
             padding: 10px;
-            background: #79B791;
+            background:rgb(0, 0, 0);
             color: #fff;
         }
 
@@ -131,7 +131,7 @@
 
         .model__btn button {
             padding: 6px 10px;
-            background: #79B791;
+            background:rgb(0, 0, 0);
             border: none;
             border-radius: 6px;
             color: #fff;
@@ -203,7 +203,7 @@
 
         .model__add tr th {
             padding: 10px 0;
-            background: #79B791;
+            background:rgb(0, 0, 0);
             color: #fff;
             font-size: 18px;
         }
@@ -224,7 +224,7 @@
 
         .model__add tr td:last-child button{
             color: #fff;
-            background: #79B791;
+            background:rgb(0, 0, 0);
             border: none;
             cursor: pointer;
             padding: 6px 10px;
