@@ -40,6 +40,8 @@
 }   
 
 */
+
+//Tien dang test
 class connectDatabase{
     private $servername;
     private $username;
