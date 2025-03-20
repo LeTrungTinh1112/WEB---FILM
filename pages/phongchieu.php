@@ -17,7 +17,7 @@
         .box1 button{
             float: right;
         }
-        #btnPhongChieu, #btnLoaiGhe, #btnGhe{
+        #btnPhongChieu, #btnLoaiGhe, #btnGhe, #btnSuatChieu{
         border: 2px solid black;
         }
         .h6 {
@@ -109,6 +109,12 @@
             <button class="btn" id="btnPhongChieu" style="background-color: #79B791;">Phòng Chiếu</button>
             <button class="btn" id="btnLoaiGhe">Loại Ghế</button>
             <button class="btn" id="btnGhe">Ghế</button>
+            <button class="btn" id="btnSuatChieu">Suất Chiếu</button>
+        </div>
+        <div id=contentSuatChieu class = "content">
+        <div class="box1">
+                <button class="btn btn-primary them suat chieu" data-toggle="modal" data-target="#">Thêm SC</button>
+            </div>
         </div>
         <div id="contentLoaiGhe" class="content">
             <div class="box1">
@@ -1050,6 +1056,8 @@ function validateSuaPhongChieuForm() {
                 $("#contentPhongChieu").addClass("active-content");
                 $("#contentLoaiGhe").removeClass("active-content");
                 $('#contentGhe').removeClass("active-content");
+                $("#btnSuatChieu").removeClass("active").css("background-color", "");
+                $("#contentSuatChieu").removeClass("active-content");
             });
 
             $("#btnLoaiGhe").click(function() {
@@ -1059,6 +1067,8 @@ function validateSuaPhongChieuForm() {
                 $("#contentLoaiGhe").addClass("active-content");
                 $("#contentPhongChieu").removeClass("active-content");
                 $('#contentGhe').removeClass("active-content");
+                $("#btnSuatChieu").removeClass("active").css("background-color", "");
+                $("#contentSuatChieu").removeClass("active-content");
             });
 
             $('#btnGhe').click(function() {
@@ -1068,7 +1078,17 @@ function validateSuaPhongChieuForm() {
                 $('#contentGhe').addClass("active-content");
                 $("#contentPhongChieu").removeClass("active-content");
                 $("#contentLoaiGhe").removeClass("active-content");
-
+                $("#btnSuatChieu").removeClass("active").css("background-color", "");
+                $("#contentSuatChieu").removeClass("active-content");
+            })
+            $('#btnSuatChieu').click(function() {
+                $(this).addClass("active").css("background-color", "#79B791");
+                $("#btnPhongChieu").removeClass("active").css("background-color", "");
+                $("#btnLoaiGhe").removeClass("active").css("background-color", "");
+                $('#contentGhe').removeClass("active-content");
+                $("#contentPhongChieu").removeClass("active-content");
+                $("#contentLoaiGhe").removeClass("active-content");
+                $("#contentSuatChieu").addClass("active-content");
             })
 
             $("#contentPhongChieu").addClass("active-content");
