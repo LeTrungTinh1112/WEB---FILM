@@ -50,14 +50,14 @@ class connectDatabase{
     public  $conn;
 
     public function __construct(){
-        $this->servername = "127.0.0.1"; // Tên máy chủ cơ sở dữ liệu
+        $this->servername = "localhost"; // Tên máy chủ cơ sở dữ liệu
         $this->username = "root"; // Tên người dùng cơ sở dữ liệu
-        $this->password = "Tinh2004"; // Mật khẩu của người dùng cơ sở dữ liệu
+        $this->password = ""; // Mật khẩu của người dùng cơ sở dữ liệu
         $this->database = "cinema"; // Tên cơ sở dữ liệu
         $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->database);
         
         if ($this->conn->connect_error) {
-            die("Kết nối thất bại: " . $this->conn->connect_error);
+            die("Kết nối thất bại  : " . $this->conn->connect_error);
         }
     }
 
