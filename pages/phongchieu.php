@@ -143,7 +143,7 @@ $conn = new connectDatabase();
         </div>
         <div id=contentSuatChieu class="content">
             <div class="box1">
-                <button class="btn btn-primary them suat chieu" data-toggle="modal" data-target="#">Thêm SC</button>
+                <button class="btn btn-primary addsuatchieu" data-toggle="modal" data-target="#themSuatChieuModal">Thêm Suất Chiếu</button>
             </div>
             <table class="table table-hover table-bordered table-striped">
                 <thead>
@@ -178,41 +178,78 @@ $conn = new connectDatabase();
                 </tbody>
             </table>
             <!-- Form Sửa Suất Chiếu -->
-        <form action="./pages/updateSuatChieu.php" method="post" id="suaSuatChieu">
-            <div class="modal fade" id="editSuatChieuModal" tabindex="-1" role="dialog" aria-labelledby="editSuatChieuLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Sửa Suất Chiếu</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="edit_masuatchieu">Mã Suất Chiếu</label>
-                                <input type="text" id="edit_masuatchieu" name="edit_masuatchieu" class="form-control" readonly>
+            <form action="./pages/updateSuatChieu.php" method="post" id="suaSuatChieu">
+                <div class="modal fade" id="editSuatChieuModal" tabindex="-1" role="dialog" aria-labelledby="editSuatChieuLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Sửa Suất Chiếu</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                            <div class="form-group">
-                                <label for="edit_ngay">Ngày</label>
-                                <input type="date" id="edit_ngay" name="edit_ngay" class="form-control">
-                                <span id="edit_ngayError" style="color: red;"></span>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="edit_masuatchieu">Mã Suất Chiếu</label>
+                                    <input type="text" id="edit_masuatchieu" name="edit_masuatchieu" class="form-control" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit_ngay">Ngày</label>
+                                    <input type="date" id="edit_ngay" name="edit_ngay" class="form-control">
+                                    <span id="edit_ngayError" style="color: red;"></span>
 
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit_thoigianbatdau">Thời Gian Bắt Đầu</label>
+                                    <input type="text" id="edit_thoigianbatdau" name="edit_thoigianbatdau" class="form-control">
+                                    <span id="edit_thoigianbatdauError" style="color: red;"></span>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="edit_thoigianbatdau">Thời Gian Bắt Đầu</label>
-                                <input type="text" id="edit_thoigianbatdau" name="edit_thoigianbatdau" class="form-control">
-                                <span id="edit_thoigianbatdauError" style="color: red;"></span>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                <input type="submit" class="btn btn-success" name="sua_suatchieu" value="Cập Nhật">
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                            <input type="submit" class="btn btn-success" name="sua_suatchieu" value="Cập Nhật">
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+            <!-- Form Thêm Suất Chiếu -->
+            <form action="./pages/insertSuatChieu.php" method="post" id="themSuatChieu">
+                <div class="modal fade" id="themSuatChieuModal" tabindex="-1" role="dialog" aria-labelledby="themSuatChieuLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Thêm Suất Chiếu</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="add_masuatchieu">Mã Suất Chiếu</label>
+                                    <input type="text" id="add_masuatchieu" name="add_masuatchieu" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="add_ngay">Ngày</label>
+                                    <input type="date" id="edit_ngay" name="add_ngay" class="form-control">
+                                    <span id="add_ngayError" style="color: red;"></span>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="add_thoigianbatdau">Thời Gian Bắt Đầu</label>
+                                    <input type="text" id="add_thoigianbatdau" name="add_thoigianbatdau" class="form-control">
+                                    <span id="add_thoigianbatdauError" style="color: red;"></span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                                <input type="submit" class="btn btn-success" name="them_suatchieu" value="Thêm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
         </div>
         <div id="contentLoaiGhe" class="content">
             <div class="box1">
@@ -845,11 +882,13 @@ $conn = new connectDatabase();
             document.getElementById("edit_price").value = price;
             $('#editLoaiGheModal').modal('show');
         }
+
         function openEditSuatChieuForm(id, ngay, thoigian) {
             document.getElementById("edit_masuatchieu").value = id;
             document.getElementById("edit_ngay").value = ngay;
             document.getElementById("edit_thoigianbatdau").value = thoigian;
-            $('#editSuatChieuModal').modal('show');F
+            $('#editSuatChieuModal').modal('show');
+            F
         }
 
         function openEditGheForm(maPhongChieu, maLoaiGhe, stt, hangGhe, trangThai, maGhe) {
@@ -958,6 +997,8 @@ $conn = new connectDatabase();
         document.getElementById("themLoaiGhe").onsubmit = function() {
             return validateFormLoaiGhe();
         };
+
+       
 
 
         //validate sualoaighe

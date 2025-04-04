@@ -189,7 +189,7 @@ function showLichchieuphimtheongay($day)
             else
                 echo $phim['DOTUOI'] . '+</span>';
             echo '<span class="name_movie">' . $phim['TENPHIM'] . '</span>
-                                <span class="thoiluong_movie">' . $phim['THOILUONG'] . ' phút</span>
+                                <span class="thoiluong_movie">' . $phim['THOILUONG'] . ' </span>
                             </div>';
 
             $phimvasuatchieu = listPhimvaSuatchieucuaphimtheoMAPM($phim['MAPM'], $day);
