@@ -41,33 +41,33 @@ function chuoiTheLoai($maPM) {
 
 <title>Trang chủ</title>
 <div class="main_home">
-<div class="phimdangchieu">
-    <!-- Thêm thẻ video làm nền -->
-    <video autoplay muted loop id="myVideo">
-        <source src="http://localhost/doan_web2/Video/VideoBG1.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
+    <div class="phimdangchieu">
+        <!-- Thêm thẻ video làm nền -->
+        <video autoplay muted loop id="myVideo">
+            <source src="http://localhost/WEB---FILM/Video/VideoBG1.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
 
-    <div class="grid">
-        <div class="grid__row">
-            <div class="grid__full-width">
-                <span class="btn_next-film" id="btn_next_phimdangchieu">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </span>
-                <span class="btn_prev-film" id="btn_prev_phimdangchieu">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </span>
-                <div class="grid__column wrap-bottom">
+        <div class="grid">
+            <div class="grid__row">
+                <div class="grid__full-width">
+                    <span class="btn_next-film" id="btn_next_phimdangchieu">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                    <span class="btn_prev-film" id="btn_prev_phimdangchieu">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </span>
+                    <div class="grid__column wrap-bottom">
 
-                    <div class="home-tittle">
-                        <span class="sparkle">
-                            Phim Đang Chiếu
-                        </span>
-                    </div>
-                    <div class="home-product">
-                        <div class="grid__row_no_wrap" id="slide_phimdangchieu">
+                        <div class="home-tittle">
+                            <span class="sparkle">
+                                Phim Đang Chiếu
+                            </span>
+                        </div>
+                        <div class="home-product">
+                            <div class="grid__row_no_wrap" id="slide_phimdangchieu">
 
-                            <?php
+                                <?php
                                 if ($resultPDC->num_rows > 0) {
                                     while($row = $resultPDC->fetch_assoc()) {
                                         echo "<div class='grid__column-2-4'>";
@@ -102,33 +102,33 @@ function chuoiTheLoai($maPM) {
                                     echo "<script>console.log('khong co phim')</script>";
                                 }
                             ?>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-        <div class="phimsapchieu">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__full-width">
-                        <span class="btn_next-film individual" id="btn_next_phimsapchieu">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </span>
-                        <span class="btn_prev-film individual" id="btn_prev_phimsapchieu">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </span>
-                        <div class="grid__column wrap-bottom">
-                            <div class="home-tittle">
-                                <span class="text-phimsapchieu">
-                                    Phim sắp chiếu
-                                </span>
-                            </div>
-                            <div class="home-product">
-                                <div class="grid__row_no_wrap" id="slide_phimsapchieu">
+    <div class="phimsapchieu">
+        <div class="grid">
+            <div class="grid__row">
+                <div class="grid__full-width">
+                    <span class="btn_next-film individual" id="btn_next_phimsapchieu">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+                    <span class="btn_prev-film individual" id="btn_prev_phimsapchieu">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </span>
+                    <div class="grid__column wrap-bottom">
+                        <div class="home-tittle">
+                            <span class="text-phimsapchieu">
+                                Phim sắp chiếu
+                            </span>
+                        </div>
+                        <div class="home-product">
+                            <div class="grid__row_no_wrap" id="slide_phimsapchieu">
 
-                                    <!-- <div class="grid__column-2-4">
+                                <!-- <div class="grid__column-2-4">
                                         <a class="product-item" href="#">
                                             <div class="product-item__img"
                                                 style="background-image: url(./img/ngoidenkyquai.jpg);"></div>
@@ -150,7 +150,7 @@ function chuoiTheLoai($maPM) {
                                         </a>
                                     </div> -->
 
-                                    <?php
+                                <?php
                 if ($resultPSC->num_rows > 0) {
                     while($row = $resultPSC->fetch_assoc()) {
                         echo "<div class='grid__column-2-4'>";
@@ -181,28 +181,29 @@ function chuoiTheLoai($maPM) {
                     echo "<script>console.log('khong co phim')</script>";
                 }
             ?>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="menuphim">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__full-width">
-                        <div class="grid__column wrap-bottom">
-                            <div class="home-filter">
-                                <span class="text-menu">
-                                    Tìm phim chiếu rạp trên MeMe
-                                </span>
+    <div class="menuphim">
+        <div class="grid">
+            <div class="grid__row">
+                <div class="grid__full-width">
+                    <div class="grid__column wrap-bottom">
+                        <div class="home-filter">
+                            <span class="text-menu">
+                                Tìm phim chiếu rạp trên MeMe
+                            </span>
 
-                                <div class="home-filer__navbar">
-                                    <select class="cbb_category home-filer__navbar-item" name="cbb_category" id="cbb_category">
-                                        <option value="Thể loại">Thể loại</option>
-                                        <?php
+                            <div class="home-filer__navbar">
+                                <select class="cbb_category home-filer__navbar-item" name="cbb_category"
+                                    id="cbb_category">
+                                    <option value="Thể loại">Thể loại</option>
+                                    <?php
                                         $sqlTenTL = "SELECT* FROM theloai";
                                         $resultTL = $conn->executeQuery($sqlTenTL);
                                         if ($resultTL->num_rows > 0) {
@@ -211,10 +212,10 @@ function chuoiTheLoai($maPM) {
                                             }
                                         }
                                         ?>
-                                    </select>
-                                    <select class="cbb_country home-filer__navbar-item" name="cbb_country" id="cbb_country">
-                                        <option value="Quốc gia">Quốc gia</option>
-                                        <?php
+                                </select>
+                                <select class="cbb_country home-filer__navbar-item" name="cbb_country" id="cbb_country">
+                                    <option value="Quốc gia">Quốc gia</option>
+                                    <?php
                                         $countries = array(
                                             "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua và Barbuda", "Argentina", "Armenia", "Úc", "Áo",
                                             "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Bỉ", "Belize", "Benin", "Bhutan",
@@ -243,10 +244,10 @@ function chuoiTheLoai($maPM) {
                                         }
                                         ?>
 
-                                    </select>
-                                    <select class="cbb_years home-filer__navbar-item" name="cbb_years" id="cbb_years">
-                                        <option value="Năm">Năm</option>
-                                        <?php
+                                </select>
+                                <select class="cbb_years home-filer__navbar-item" name="cbb_years" id="cbb_years">
+                                    <option value="Năm">Năm</option>
+                                    <?php
                                         $current_year = date("Y");
                                         $current_year_int = intval($current_year);
                                         for($nam=$current_year_int;$nam>1960;$nam--){
@@ -254,28 +255,28 @@ function chuoiTheLoai($maPM) {
                                         }
                                         ?>
 
-                                    </select>
-                                    <div class="search-container">
-                                        <input type="text" class="home-filer__navbar-item searchHome" id="searchFilmMenu" name="search" placeholder="Type to search...">
-                                        <span class="search-icon">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                        </span>
-                                    </div>
+                                </select>
+                                <div class="search-container">
+                                    <input type="text" class="home-filer__navbar-item searchHome" id="searchFilmMenu"
+                                        name="search" placeholder="Type to search...">
+                                    <span class="search-icon">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
                                 </div>
-                                </form>
                             </div>
-                            <div class="home-product"  id='conchimnon'>
+                            </form>
+                        </div>
+                        <div class="home-product" id='conchimnon'>
 
-                                <!-- <div class="grid__row" id="conchimnon">
+                            <!-- <div class="grid__row" id="conchimnon">
                     
                                 </div> -->
 
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
+</div>

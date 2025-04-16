@@ -634,7 +634,7 @@ font-size: 17px;
     border-radius: 5px;
 }
 .lichchieuphim_lichchieu .time_start{
-    color: var(--green1);
+    color: rgb(0, 0, 0);
     font-size: 1.1rem;
 }
 
@@ -993,7 +993,7 @@ display: none;
 }
 #selectChangeSC{
     background-color: var(--primary_color);
-    color: var(--green1);
+    color: white;
 }
 #add_phim_lichchieuphim i{
     margin: 10px;
@@ -1194,6 +1194,7 @@ label {
     color: #000;
     font-size: 1.1rem;
     font-weight: 500;
+    border-radius: 15px;
 }
 
 .model_iput_name{
@@ -1202,6 +1203,7 @@ label {
 
 .modal_input_tenQuyen span{
     font-size: 1.2rem;
+    color: white;
 }
 .modal_delete_tenQuyen{
     font-size: 1.2rem;
@@ -1214,6 +1216,7 @@ label {
     color: #000;
     font-size: 1.1rem;
     font-weight: 500;
+    border-radius: 15px;
 }
 .form_modal_input{
     position: absolute;
@@ -1231,14 +1234,15 @@ label {
     top: 150px;
     left: 350px;
     width: 400px;
-    height: 160px;
-
+    height: 140px;
     background-color: var(--primary_color);
+    border-radius: 15px;
     
 }
 
 .modal_input_tenQuyen, .modal_delete_tenQuyen{
     margin: 20px auto;
+    color: white;
 }
 
 .modal_btn_wrap{

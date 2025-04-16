@@ -19,7 +19,7 @@ body {
 
 /* || Variable */
 :root {
-    --color-web: #79B791;
+    --color-web: #000000;
     --color-ghe-doi: rgb(250, 37, 161);
     --color-ghe-don: #d5636384;
     --color-ghe-da-dat: gray;
@@ -93,9 +93,9 @@ body {
     background-color: white;
     margin-bottom: 10px;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.322);
-
     display: flex;
     flex-direction: row;
+    margin: 0 100px;
 }
 
 #menu-bap-nuoc .mon .thong-tin-dich-vu {
@@ -569,6 +569,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    font-size: 15px;
 }
 
 #btn-mua-ve p::before {
@@ -820,6 +821,7 @@ main {
     font-weight: 100;
     text-align: justify;
     opacity: 0.8;
+    width:70%;
 }
 
 /* || Film Calendar */
@@ -859,12 +861,12 @@ main {
     border: 1px solid rgba(0, 0, 0, 0.497);
     border-radius: 10px;
     min-width: 80px;
-    height: 70px;
+    height: 60px;
     margin: 20px 5px;
 }
 
 .filmCalendar .list-days .day:hover {
-    border: 4px solid var(--color-web);
+    border: 4px solid grey;
 }
 
 .filmCalendar .list-days .day label {
@@ -872,14 +874,13 @@ main {
     justify-content: center;
     width: 100%;
     border-bottom: 1px solid black;
-
-    background-color: #126531;
+    background-color: #000000;
     color: white;
 }
 
 .filmCalendar .list-days .day p {
-    background-color: #9fe7bb;
-    color: rgba(0, 0, 0, 0.807);
+    background-color: #000000;
+    color: rgba(255, 255, 255, 0.807);
     height: 75%;
     padding-top: 10px;
     font-size: 16px;
@@ -934,8 +935,8 @@ main {
 }
 
 .filmCalendar .list-hours {
-    background-color: var(--color-web);
-    border-top: 4px solid #1e743f;
+    background-color: black;
+    border-top: 4px solid #ffffff;
     height: 200px;
     width: 100%;
     display: flex;
@@ -1016,8 +1017,8 @@ footer {
     .container-pop-up-menu-thanh-toan {
         width: 98%;
         right: 1%;
-        height: 95%;
-        top: 2%;
+        height: 70%;
+        top: 10%;
 
         border: 1px solid black;
         border-radius: 20px;
@@ -1075,8 +1076,8 @@ footer {
     .container-pop-up-menu-thanh-toan {
         width: 80%;
         right: 10%;
-        height: 95%;
-        top: 2%;
+        height: 70%;
+        top: 10%;
 
         border: 1px solid black;
         border-radius: 15px;
@@ -1102,3 +1103,41 @@ footer {
 /* @media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
 
 } */
+
+div#tam-tinh {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+div#MDV001 {
+    font-size: 15px;
+}
+div#MDV002 {
+    font-size: 15px;
+}div#MDV003 {
+    font-size: 15px;
+}div#MDV004 {
+    font-size: 15px;
+}div#MDV005 {
+    font-size: 15px;
+}div#MDV006 {
+    font-size: 15px;
+}div#MDV007 {
+    font-size: 15px;
+}div#MDV008 {
+    font-size: 15px;
+}
+
+.gia-dich-vu {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+span#tong-cong {
+    font-size: 20px;
+    font-weight: 600;
+}
+span.total-bap-nuoc {
+    font-size: 15px;
+    font-weight: 600;
+}
