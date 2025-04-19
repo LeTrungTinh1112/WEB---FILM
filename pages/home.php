@@ -44,7 +44,8 @@ function chuoiTheLoai($maPM) {
 <div class="phimdangchieu">
     <!-- Thêm thẻ video làm nền -->
     <video autoplay muted loop id="myVideo">
-        <source src="http://localhost/doan_web2/Video/VideoBG1.mp4" type="video/mp4">
+        <source src="Video/VideoBG1.mp4" type="video/mp4">
+        <!-- //<source src="http://localhost/WEB---FIL/Video/VideoBG1.mp4" type="video/mp4"> -->
         Your browser does not support HTML5 video.
     </video>
 
