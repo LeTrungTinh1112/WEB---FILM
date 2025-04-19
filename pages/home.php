@@ -41,13 +41,14 @@ function chuoiTheLoai($maPM) {
 
 <title>Trang chủ</title>
 <div class="main_home">
-    <div class="phimdangchieu">
-        <!-- Thêm thẻ video làm nền -->
-        <video autoplay muted loop id="myVideo">
-            <source src="http://localhost/WEB---FILM/Video/VideoBG1.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-
+<div class="phimdangchieu">
+    <!-- Thêm thẻ video làm nền -->
+    <video autoplay muted loop id="myVideo">
+        <source src="Video/VideoBG1.mp4" type="video/mp4">
+        <!-- //<source src="http://localhost/WEB---FIL/Video/VideoBG1.mp4" type="video/mp4"> -->
+        Your browser does not support HTML5 video.
+    </video>
+ main
         <div class="grid">
             <div class="grid__row">
                 <div class="grid__full-width">
