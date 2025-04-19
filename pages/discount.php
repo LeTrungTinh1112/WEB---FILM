@@ -47,10 +47,7 @@
             <div class="new-friend__title">
                 Nhập MEME9K/MEMEAL9K - Bạn mới MEME nhận vé xem phim chỉ 9K!
             </div>
-            <div class="new-friend__contentbg">
-                Ưu đãi cực sốc cho khách hàng mới khi lần đầu đăng ký dùng MEME: Thẻ quà xem phim chỉ 9K áp
-                dụng tại rạp MEME. Nhanh tay đăng kí, rinh quà xịn, xem phim thả ga!
-            </div>
+            
             <div class="new-friend__wrap">
                 <div class="new-friend__img">
                     <img src="./img/bgmain.jpg" alt="">

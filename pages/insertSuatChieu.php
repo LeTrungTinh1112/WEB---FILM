@@ -3,11 +3,8 @@ require_once('../database/connectDatabase.php');
 $conn = new connectDatabase();
 
 if(isset($_POST['them_suatchieu'])) {
-    $ngay = $_POST['ngay'];
-    $gioBatDau = $_POST['gioBatDau'];
-    $phutBatDau = $_POST['phutBatDau'];
-    $thoiGianBatDau = str_pad($gioBatDau, 2, '0', STR_PAD_LEFT) . ':' . str_pad($phutBatDau, 2, '0', STR_PAD_LEFT) ;
-
+    $ngay = $_POST['add_ngay'];
+    $thoiGianBatDau = $_POST['add_thoigianbatdau'];
     // Lấy giá trị lớn nhất của MASC và tăng thêm 1 để tạo mã mới
     // $query_max_id = "SELECT MAX(RIGHT(MASC, 4)) AS max_id FROM suatchieu";
     $query_max_id = "SELECT MASC AS max_id FROM suatchieu";
@@ -32,7 +29,7 @@ if(isset($_POST['them_suatchieu'])) {
     $result_check_duplicate = $conn->executeQuery($query_check_duplicate);
 
     if(mysqli_num_rows($result_check_duplicate) > 0) {
-        header('location: ../admin.php?page=suatchieuadmin&message=Suất chiếu đã tồn tại, vui lòng chọn một ngày khác');
+        header('location: ../admin.php?page=phongchieu&message=Suất chiếu đã tồn tại, vui lòng chọn một ngày khác');
         exit();
     } else {
         if(isset($ngay)) {
@@ -42,7 +39,7 @@ if(isset($_POST['them_suatchieu'])) {
             if($result_insert_suatchieu) {
                 echo '<script>
                     window.history.replaceState({}, document.title, window.location.href.split("?")[0]);
-                    window.location.href = "../admin.php?page=suatchieuadmin&message=Thêm suất chiếu thành công";
+                    window.location.href = "../admin.php?page=phongchieu&message=Thêm suất chiếu thành công";
                 </script>';  
             } else {
                 echo "Lỗi khi thêm suất chiếu: ";

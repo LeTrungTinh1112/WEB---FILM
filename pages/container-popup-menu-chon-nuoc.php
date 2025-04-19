@@ -19,29 +19,27 @@
             <img src="./img/<?php echo $dichVuRow['NAMEANH']; ?>" alt="">
 
             <div class="thong-tin-dich-vu">
-                <strong><div id="<?php echo $dichVuRow['MADICHVU']; ?>" class="ten-dich-vu"><?php echo $dichVuRow['TENDICHVU']; ?></div></strong>
+                <strong>
+                    <div id="<?php echo $dichVuRow['MADICHVU']; ?>" class="ten-dich-vu">
+                        <?php echo $dichVuRow['TENDICHVU']; ?></div>
+                </strong>
 
                 <div class="mo-ta-dich-vu"><?php echo $dichVuRow['MOTA']; ?></div>
 
-                <div class="gia-dich-vu"  
-                    name="<?php echo $dichVuRow['MADICHVU']; ?>">
+                <div class="gia-dich-vu" name="<?php echo $dichVuRow['MADICHVU']; ?>">
                     <?php echo $dichVuRow['PRICE']; ?>
                 </div>
 
                 <div class="so-luong-dich-vu">
-                    <button class="btn-tru" 
-                    madichvu="<?php echo $dichVuRow['MADICHVU']; ?>"
-                    tendichvu="<?php echo $dichVuRow['TENDICHVU']; ?>"
-                    price="<?php echo $dichVuRow['PRICE']; ?>"
-                    >-</button>
-                    <label class="so-luong-label" 
-                    madichvu="<?php echo $dichVuRow['MADICHVU']; ?>"
-                    tendichvu="<?php echo $dichVuRow['TENDICHVU']; ?>"
-                    price="<?php echo $dichVuRow['PRICE']; ?>">0</label>
-                    <button class="btn-cong" 
-                    madichvu="<?php echo $dichVuRow['MADICHVU']; ?>"
-                    tendichvu="<?php echo $dichVuRow['TENDICHVU']; ?>"
-                    price="<?php echo $dichVuRow['PRICE']; ?>">+</button>
+                    <button class="btn-tru" madichvu="<?php echo $dichVuRow['MADICHVU']; ?>"
+                        tendichvu="<?php echo $dichVuRow['TENDICHVU']; ?>"
+                        price="<?php echo $dichVuRow['PRICE']; ?>">-</button>
+                    <label class="so-luong-label" madichvu="<?php echo $dichVuRow['MADICHVU']; ?>"
+                        tendichvu="<?php echo $dichVuRow['TENDICHVU']; ?>"
+                        price="<?php echo $dichVuRow['PRICE']; ?>">0</label>
+                    <button class="btn-cong" madichvu="<?php echo $dichVuRow['MADICHVU']; ?>"
+                        tendichvu="<?php echo $dichVuRow['TENDICHVU']; ?>"
+                        price="<?php echo $dichVuRow['PRICE']; ?>">+</button>
                 </div>
             </div>
         </div>
@@ -52,7 +50,7 @@
 
     <div id="tong-tien-bap-nuoc">
         <div>
-            <span>Tổng cộng</span>
+            <span class="total-bap-nuoc">Tổng cộng</span>
             <span id="tong-cong">0</span>
         </div>
 

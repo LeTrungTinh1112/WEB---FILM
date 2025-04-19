@@ -6,7 +6,7 @@ $database = new connectDatabase();
 if ($database->conn) {
     echo "Kết nối MySQL thành công!";
 } else {
-    echo "Kết nối MySQL thất bại!";
+    echo "Kết nối MySQL thất bại!!!!";
 }
 ?>
 
