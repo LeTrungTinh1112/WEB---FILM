@@ -1,4 +1,7 @@
 <?php
+header('Access-Control-Allow-Headers: *');
+header("Access-Control-Allow-Origin: *"); // or use your specific domain
+header("Access-Control-Allow-Methods: GET, OPTIONS");
 session_start();
 ?>
 

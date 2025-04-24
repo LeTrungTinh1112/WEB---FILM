@@ -13,7 +13,6 @@
         $thoigian = $data['thoigian'];
         $phuongthucthanhtoan = $data['phuongthucthanhtoan'];
         $bapnuocs = $data['bapnuocs'];
-
         // Tạo mã vé tự động
         $veSql = "SELECT COUNT(*) AS total_rows FROM ve";
         $veQuery = $connect->executeQuery($veSql);
@@ -36,8 +35,8 @@
         }
 
         // UPDATE table ve
-        $upDateSql  = " INSERT INTO ve(MAVE, USERNAME, MALICHCHIEU, TONGTIEN, NGAY, THOIGIAN, PHUONGTHUCTHANHTOAN)
-                        VALUES ('$mave', '$username', '$malichchieu', '$tongtien', '$ngay', '$thoigian', '$phuongthucthanhtoan')
+        $upDateSql  = " INSERT INTO ve(MAVE, USERNAME, MALICHCHIEU, TONGTIEN, NGAY, THOIGIAN, PHUONGTHUCTHANHTOAN,DATHANHTOAN)
+                        VALUES ('$mave', '$username', '$malichchieu', '$tongtien', '$ngay', '$thoigian', '$phuongthucthanhtoan','false')
                     ";
         $upDateQuery = $connect->executeQuery($upDateSql); // trả về true nếu thành công, ngược lại là false
 

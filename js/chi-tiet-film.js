@@ -38,7 +38,7 @@ btnLeft.addEventListener(
         } else {
             current--;
             let width = days[0].offsetWidth;
-            listDays.style.transform = `translateX(${-width * current}px)`; 
+            listDays.style.transform = `translateX(${-width * current}px)`;
         }
     }
 )
@@ -46,14 +46,14 @@ btnLeft.addEventListener(
 btnRight.addEventListener(
     'click',
     (e) => {
-        if(current == length - 1) {
+        if (current == length - 1) {
             current = 0;
             let width = days[0].offsetWidth;
             listDays.style.transform = `translateX(0px)`;
         } else {
             current++;
             let width = days[0].offsetWidth;
-            listDays.style.transform = `translateX(${width * -1 * current}px)`; 
+            listDays.style.transform = `translateX(${width * -1 * current}px)`;
         }
     }
 )
@@ -63,19 +63,19 @@ const day = document.querySelectorAll('.day');
 const hours = document.querySelectorAll('.hour');
 let temp = document.querySelector('.temp');
 
-for(let i = 0; i < day.length; i++) {
+for (let i = 0; i < day.length; i++) {
     day[i].addEventListener(
         'click',
         (e) => {
             temp.style.display = 'none';
-            for(let j = 0; j < hours.length; j++) {
-                if(day[i].getAttribute('ngaychieu') == hours[j].getAttribute('ngaychieu')) {
+            for (let j = 0; j < hours.length; j++) {
+                if (day[i].getAttribute('ngaychieu') == hours[j].getAttribute('ngaychieu')) {
                     hours[j].style.display = 'flex';
                 } else {
                     hours[j].style.display = 'none';
                 }
             }
-        }, 
+        },
         false
     );
 }
@@ -100,19 +100,19 @@ iconCloseMenuChonNuoc.addEventListener(
     "click",
     (e) => {
         containerPopupMenuChonNuoc.style.display = "none";
-        for( let i = 0; i < soLuongs.length; i++) {
-                let soLuongStr = soLuongs[i].textContent.trim();
-                let soLuong = isNaN(soLuongStr) ? 0 : parseInt(soLuongStr); 
-                soLuong = 0; 
+        for (let i = 0; i < soLuongs.length; i++) {
+            let soLuongStr = soLuongs[i].textContent.trim();
+            let soLuong = isNaN(soLuongStr) ? 0 : parseInt(soLuongStr);
+            soLuong = 0;
 
-                let tongCongStr = tongCongs.textContent.trim();
-                let tongCong = isNaN(tongCongStr) ? 0 : parseInt(tongCongStr);
-                tongCong = 0; 
-            
-                soLuongs[i].textContent = soLuong.toString();
-                tongCongs.textContent = tongCong.toString();
+            let tongCongStr = tongCongs.textContent.trim();
+            let tongCong = isNaN(tongCongStr) ? 0 : parseInt(tongCongStr);
+            tongCong = 0;
+
+            soLuongs[i].textContent = soLuong.toString();
+            tongCongs.textContent = tongCong.toString();
         }
-        
+
         containerPopupMenuChonGhe.style.display = "flex";
     },
     false
@@ -124,30 +124,30 @@ const btnMuaVe = document.querySelector("#btn-mua-ve");
 btnMuaVe.addEventListener(
     "click",
     (e) => {
-            // Kiểm tra xem ghế có được chọn
-            let kiemTra = false;
-            let kiemTraGheDons = document.querySelectorAll('.ghe-don div');
-            let kiemTraGheDois = document.querySelectorAll('.ghe-doi div');
+        // Kiểm tra xem ghế có được chọn
+        let kiemTra = false;
+        let kiemTraGheDons = document.querySelectorAll('.ghe-don div');
+        let kiemTraGheDois = document.querySelectorAll('.ghe-doi div');
 
-            kiemTraGheDons.forEach((ghe) => {
-                if(ghe.classList.contains('daChon')) {
-                    kiemTra = true; 
-                    return;
-                }
-            });
-
-            kiemTraGheDois.forEach((ghe) => {
-                if(ghe.classList.contains('daChon')) 
-                    kiemTra = true;
-                    return;
-            });
-            if(!kiemTra) {
-                alert('Mời bạn chọn phòng và ghế');
-            } else {
-                containerPopupMenuChonNuoc.style.display = "flex";
-
-                containerPopupMenuChonGhe.style.display = "none";
+        kiemTraGheDons.forEach((ghe) => {
+            if (ghe.classList.contains('daChon')) {
+                kiemTra = true;
+                return;
             }
+        });
+
+        kiemTraGheDois.forEach((ghe) => {
+            if (ghe.classList.contains('daChon'))
+                kiemTra = true;
+            return;
+        });
+        if (!kiemTra) {
+            alert('Mời bạn chọn phòng và ghế');
+        } else {
+            containerPopupMenuChonNuoc.style.display = "flex";
+
+            containerPopupMenuChonGhe.style.display = "none";
+        }
     },
     false
 )
@@ -197,7 +197,7 @@ function showGhe(MAPM, MAPHONGCHIEU, MALICHCHIEU) {
             reject("MAPHONGCHIEU is empty");
         } else {
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
+            xmlhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
                     document.getElementById("row-ghe").innerHTML = this.responseText;
                     resolve("Data loaded successfully");
@@ -207,13 +207,13 @@ function showGhe(MAPM, MAPHONGCHIEU, MALICHCHIEU) {
             xmlhttp.send();
         }
     });
-}   
+}
 
 function kiemTraGheDaBan() {
     return new Promise((resolve) => {
         let gheDon = document.querySelectorAll('.ghe-don div');
         let gheDoi = document.querySelectorAll('.ghe-doi div');
-        
+
     });
 }
 
@@ -227,7 +227,7 @@ function clickChonGhe() {
 
         gheDons.forEach((ghe) => {
             ghe.addEventListener(
-                'click', 
+                'click',
                 (e) => {
                     if (!e.target.classList.contains('daMua')) {
                         e.target.classList.toggle('daChon');
@@ -236,22 +236,22 @@ function clickChonGhe() {
 
                             let giaGheStr = ghe.getAttribute('price').trim();
                             let giaGhe = isNaN(giaGheStr) ? 0 : parseInt(giaGheStr);
-                            
+
                             let tamTinhStr = tamTinhs.textContent.trim();
                             let tamTinh = isNaN(tamTinhStr) ? 0 : parseInt(tamTinhStr);
-                            tamTinh += giaGhe; 
-                            
+                            tamTinh += giaGhe;
+
                             tamTinhs.textContent = tamTinh.toString();
                         } else {
                             choNgoi.textContent = choNgoi.textContent.replace(e.target.textContent, '');
 
                             let giaGheStr = ghe.getAttribute('price').trim();
                             let giaGhe = isNaN(giaGheStr) ? 0 : parseInt(giaGheStr);
-                            
+
                             let tamTinhStr = tamTinhs.textContent.trim();
                             let tamTinh = isNaN(tamTinhStr) ? 0 : parseInt(tamTinhStr);
-                            tamTinh -= giaGhe; 
-                            
+                            tamTinh -= giaGhe;
+
                             tamTinhs.textContent = tamTinh.toString();
                         }
                     }
@@ -264,7 +264,7 @@ function clickChonGhe() {
 
         gheDois.forEach((ghe) => {
             ghe.addEventListener(
-                'click', 
+                'click',
                 (e) => {
                     if (!e.target.classList.contains('daMua')) {
                         e.target.classList.toggle('daChon');
@@ -273,22 +273,22 @@ function clickChonGhe() {
 
                             let giaGheStr = ghe.getAttribute('price').trim();
                             let giaGhe = isNaN(giaGheStr) ? 0 : parseInt(giaGheStr);
-                            
+
                             let tamTinhStr = tamTinhs.textContent.trim();
                             let tamTinh = isNaN(tamTinhStr) ? 0 : parseInt(tamTinhStr);
-                            tamTinh += giaGhe; 
-                            
+                            tamTinh += giaGhe;
+
                             tamTinhs.textContent = tamTinh.toString();
                         } else {
                             choNgoi.textContent = choNgoi.textContent.replace(e.target.textContent, '');
 
                             let giaGheStr = ghe.getAttribute('price').trim();
                             let giaGhe = isNaN(giaGheStr) ? 0 : parseInt(giaGheStr);
-                            
+
                             let tamTinhStr = tamTinhs.textContent.trim();
                             let tamTinh = isNaN(tamTinhStr) ? 0 : parseInt(tamTinhStr);
-                            tamTinh -= giaGhe; 
-                            
+                            tamTinh -= giaGhe;
+
                             tamTinhs.textContent = tamTinh.toString();
                         }
                     }
@@ -315,7 +315,7 @@ function guiThongTinDenXuLyHienThiPhongChieu(maphim, masuatchieu) {
             reject("MASUATCHIEU is empty");
         } else {
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
+            xmlhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
                     document.getElementById("chon-phong").innerHTML = this.responseText;
                     console.log(this.responseText);
@@ -326,7 +326,7 @@ function guiThongTinDenXuLyHienThiPhongChieu(maphim, masuatchieu) {
             xmlhttp.send();
         }
     });
-}   
+}
 
 function hienThiMenuChonGhe() {
     return new Promise((resolve, reject) => {
@@ -334,20 +334,20 @@ function hienThiMenuChonGhe() {
         containerPopupMenuChonGhe.style.display = "flex";
         // Xử lý sự kiện click vào phòng chiếu hiển thị ghế
         const chonPhong = document.querySelectorAll('.phong');
-        for(let i = 0; i < chonPhong.length; i++) {
+        for (let i = 0; i < chonPhong.length; i++) {
             let MAPM = chonPhong[i].getAttribute('maphim');
             let MAPHONGCHIEU = chonPhong[i].getAttribute('maphongchieu');
             let MALICHCHIEU = chonPhong[i].getAttribute('malichchieu');
-           
+
             chonPhong[i].addEventListener(
                 'click',
-                () => { 
+                () => {
                     xuLySuKienHienThiGhe(MAPM, MAPHONGCHIEU, MALICHCHIEU);
                     // phongChieuThanhToan = chonPhong[i].getAttribute('tenphong');
                     document.querySelector('#so-ghe-da-chon').textContent = "";
                     document.querySelector('#tam-tinh').textContent = 0;
                     document.querySelector('#hide-ma-lich-chieu').setAttribute(
-                        'malichchieu', 
+                        'malichchieu',
                         chonPhong[i].getAttribute('malichchieu'));
                 },
                 false
@@ -355,7 +355,7 @@ function hienThiMenuChonGhe() {
         }
         resolve("Menu displayed successfully");
     });
-}   
+}
 
 function hienThiTieuDePhimTrongMenuChonGhe(tenphim, maphim, masuatchieu) {
     return new Promise((resolve, reject) => {
@@ -363,7 +363,7 @@ function hienThiTieuDePhimTrongMenuChonGhe(tenphim, maphim, masuatchieu) {
             reject("MASUATCHIEU is empty");
         } else {
             var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
+            xmlhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
                     document.getElementById("tieu-de-phim").innerHTML = this.responseText;
                     resolve("Hien Thi Tieu De Phim successfully");
@@ -394,7 +394,7 @@ function kiemTraDangNhap(tenphim, maphim, masuatchieu) {
     let xhttp = new XMLHttpRequest();
 
     // Xác định hàm xử lý sự kiện khi nhận được phản hồi từ máy chủ
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             // Phản hồi từ máy chủ đã được nhận và xử lý
             var response = JSON.parse(this.responseText);
@@ -416,16 +416,16 @@ function kiemTraDangNhap(tenphim, maphim, masuatchieu) {
 
     // Bắt đầu gửi yêu cầu
     xhttp.send();
-}   
+}
 // Xử lý sự kiện click vào thời gian chiếu 
 const hour = document.querySelectorAll(".hour");
-for(let i = 0; i < hour.length; i++) {
+for (let i = 0; i < hour.length; i++) {
     hour[i].addEventListener(
         "click",
         (e) => {
             kiemTraDangNhap(
-                hour[i].getAttribute('tenphim'), 
-                hour[i].getAttribute('maphim'), 
+                hour[i].getAttribute('tenphim'),
+                hour[i].getAttribute('maphim'),
                 hour[i].getAttribute('masuatchieu'));
             document.querySelector('#row-ghe').innerHTML = '';
         },
@@ -441,20 +441,20 @@ const giaDichVus = document.querySelectorAll('.gia-dich-vu');
 const tongCongs = document.querySelector('#tong-cong');
 
 const tangSoLuong = (event) => {
-    for(let i = 0; i < soLuongs.length; i++) {
-        if(event.getAttribute('madichvu') == soLuongs[i].getAttribute('madichvu')) {
+    for (let i = 0; i < soLuongs.length; i++) {
+        if (event.getAttribute('madichvu') == soLuongs[i].getAttribute('madichvu')) {
 
             let soLuongStr = soLuongs[i].textContent.trim();
-            let soLuong = isNaN(soLuongStr) ? 0 : parseInt(soLuongStr); 
-            ++soLuong; 
-            
+            let soLuong = isNaN(soLuongStr) ? 0 : parseInt(soLuongStr);
+            ++soLuong;
+
             let giaDichVuStr = giaDichVus[i].textContent.trim();
             let giaDichVu = isNaN(giaDichVuStr) ? 0 : parseInt(giaDichVuStr);
-            
+
             let tongCongStr = tongCongs.textContent.trim();
             let tongCong = isNaN(tongCongStr) ? 0 : parseInt(tongCongStr);
-            tongCong += giaDichVu; 
-            
+            tongCong += giaDichVu;
+
             soLuongs[i].textContent = soLuong.toString();
             tongCongs.textContent = tongCong.toString();
         }
@@ -462,22 +462,22 @@ const tangSoLuong = (event) => {
 }
 
 const giamSoLuong = (event) => {
-    for(let i = 0; i < soLuongs.length; i++) {
-        if(event.getAttribute('madichvu') == soLuongs[i].getAttribute('madichvu')) {
+    for (let i = 0; i < soLuongs.length; i++) {
+        if (event.getAttribute('madichvu') == soLuongs[i].getAttribute('madichvu')) {
             let soLuongStr = soLuongs[i].textContent.trim(); // Lấy giá trị và loại bỏ khoảng trắng thừa
             let soLuong = isNaN(soLuongStr) ? 0 : parseInt(soLuongStr); // Chuyển đổi thành số, nếu không thành công sẽ trả về 0
-            if(soLuong > 0) {
+            if (soLuong > 0) {
                 --soLuong;
             }
             soLuongs[i].textContent = soLuong.toString();
 
             let giaDichVuStr = giaDichVus[i].textContent.trim();
             let giaDichVu = isNaN(giaDichVuStr) ? 0 : parseInt(giaDichVuStr);
-            
+
             let tongCongStr = tongCongs.textContent.trim();
             let tongCong = isNaN(tongCongStr) ? 0 : parseInt(tongCongStr);
 
-            if(soLuong >= 0 && tongCong > 0) {
+            if (soLuong >= 0 && tongCong > 0) {
                 tongCong -= giaDichVu;
             }
 
@@ -487,10 +487,10 @@ const giamSoLuong = (event) => {
     }
 }
 
-for(let i = 0; i < btnCongs.length ; i++) {
+for (let i = 0; i < btnCongs.length; i++) {
     btnCongs[i].addEventListener(
         'click',
-        () =>  {
+        () => {
             tangSoLuong(btnCongs[i]);
         },
         false
@@ -519,12 +519,12 @@ function showThongTinVeDaMua() {
         document.querySelector('#so-tien-thanh-toan_sotien').textContent = document.querySelector('#tam-tinh').textContent + "đ";
 
         // Lấy dữ liệu cho dichVuThanhToan
-        for(let i = 0; i < soLuongDichVuThanhToans.length; i++) {
+        for (let i = 0; i < soLuongDichVuThanhToans.length; i++) {
             let tendichvu = soLuongDichVuThanhToans[i].getAttribute('tendichvu');
             let price = soLuongDichVuThanhToans[i].getAttribute('price');
             let madichvu = soLuongDichVuThanhToans[i].getAttribute('madichvu');
             let soLuong = soLuongDichVuThanhToans[i].textContent;
-        
+
             // Tạo một cặp khóa / giá trị trong đối tượng jsonData cho mỗi phần tử
             jsonData[tendichvu] = {
                 madichvu: madichvu,
@@ -546,7 +546,7 @@ const xuLySuKienBapNuocDaChon = (jsonData) => {
             const xhr = new XMLHttpRequest();
 
             // Thiết lập hàm xử lý sự kiện cho sự kiện onreadystatechange
-            xhr.onreadystatechange = function() {
+            xhr.onreadystatechange = function () {
                 if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                     // Nhận dữ liệu từ phản hồi và chèn nó vào phần tử HTML
                     document.getElementById("bap-nuoc-thanh-toan_thucpham").innerHTML = this.responseText;
@@ -573,7 +573,7 @@ const xuLySoTienSuKienBapNuocDaChon = (jsonData) => {
             const xhr = new XMLHttpRequest();
 
             // Thiết lập hàm xử lý sự kiện cho sự kiện onreadystatechange
-            xhr.onreadystatechange = function() {
+            xhr.onreadystatechange = function () {
                 if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
                     // Nhận dữ liệu từ phản hồi và chèn nó vào phần tử HTML
                     document.getElementById("so-tien-thanh-toan_sotien-thucpham").innerHTML = this.responseText;
@@ -595,7 +595,7 @@ const loadDuLieuUuDai = (tongtien) => {
     let xhttp = new XMLHttpRequest();
 
     // Xác định hàm xử lý sự kiện khi nhận được phản hồi từ máy chủ
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             document.querySelector('#uu-dai-thanh-toan div').innerHTML = this.responseText;
         }
@@ -617,14 +617,14 @@ const xuLyTongTienThanhToan = () => {
     tienGhe = isNaN(tienGhe) ? 0 : parseInt(tienGhe);
     tongTienBanDau += tienGhe;
 
-    tienBapNuocs.forEach(function(item) {
+    tienBapNuocs.forEach(function (item) {
         let price = parseFloat(item.textContent.trim()); // Extract price as a number
         if (!isNaN(price)) { // Check if the extracted value is a number
             tongTienBanDau += price; // Add the price to the total
         }
     });
 
-    document.querySelector('#tong-tien-thanh-toan_tong-tien').textContent = tongTienBanDau.toString()+"đ";
+    document.querySelector('#tong-tien-thanh-toan_tong-tien').textContent = tongTienBanDau.toString() + "đ";
     loadDuLieuUuDai(tongTienBanDau);
 
     // Thêm sự kiện thay đổi ưu đãi
@@ -632,12 +632,12 @@ const xuLyTongTienThanhToan = () => {
     // Thêm sự kiện xử lý vé đã giảm
     setTimeout((e) => {
         var selectedOption = document.getElementById('phantramuudai').getAttribute('phantramuudai');
-        selectedOption = parseFloat(selectedOption)/100;
+        selectedOption = parseFloat(selectedOption) / 100;
         tongTienDaGiam = tongTienBanDau;
         tongTienDaGiam -= (tongTienBanDau * selectedOption);
         console.log(tongTienDaGiam);
-        document.querySelector('#tong-tien-thanh-toan_tong-tien').textContent = tongTienDaGiam.toString()+"đ";
-    },1000);
+        document.querySelector('#tong-tien-thanh-toan_tong-tien').textContent = tongTienDaGiam.toString() + "đ";
+    }, 1000);
 }
 
 const xuLySuKienThongTinVeDaMuaAsyn = async () => {
@@ -664,7 +664,7 @@ btnTiepTucThanhToan.addEventListener(
 // || Xử lý thanh toán vé 
 
 let thongTinThanhToan = {
-    username:'Trung',
+    username: 'Trung',
     malichchieu: '',
     maghes: {},
     bapnuocs: jsonData,
@@ -672,7 +672,7 @@ let thongTinThanhToan = {
     ngay: '',
     thoigian: '',
     phuongthucthanhtoan: ''
-} 
+}
 
 const xuLyLoadDuLieuThanhToanVe = () => {
     let maLichChieu = document.querySelector('#hide-ma-lich-chieu').getAttribute('malichchieu');
@@ -695,13 +695,13 @@ const xuLyLoadDuLieuThanhToanVe = () => {
     thongTinThanhToan.phuongthucthanhtoan = phuongThucThanhToan;
 
     kiemTraGheDons.forEach((ghe) => {
-        if(ghe.classList.contains('daChon')) {
+        if (ghe.classList.contains('daChon')) {
             thongTinThanhToan.maghes[ghe.getAttribute('maghe')] = ghe.getAttribute('price');
         }
     });
 
     kiemTraGheDois.forEach((ghe) => {
-        if(ghe.classList.contains('daChon')) 
+        if (ghe.classList.contains('daChon'))
             thongTinThanhToan.maghes[ghe.getAttribute('maghe')] = ghe.getAttribute('price');
     });
 
@@ -714,17 +714,37 @@ const xuLyCapNhatVeDaMua = () => {
             reject("Thông tin thanh toán không tồn tại");
         } else {
             // Đối tượng tồn tại
+            
+            sessionStorage.setItem('thongTinThanhToan', JSON.stringify(thongTinThanhToan));
+            console.log(sessionStorage.getItem('thongTinThanhToan'));
             const xml = new XMLHttpRequest();
-            xml.onreadystatechange = () => {
-                if(xml.readyState === XMLHttpRequest.DONE && xml.status === 200) {
-                    console.log(JSON.stringify(thongTinThanhToan));
-                    console.log(xml.responseText);
-                    resolve("Thanh toán thành công");
-                }
-            };
-            xml.open("POST", "./pages/xu-ly-cap-nhat-ve-da-mua.php", true);
-            xml.setRequestHeader('Content-Type', 'application/json');
-            xml.send(JSON.stringify(thongTinThanhToan));
+            if (thongTinThanhToan.phuongthucthanhtoan == "Cashing") {
+                xml.onreadystatechange = () => {
+                    if (xml.readyState === XMLHttpRequest.DONE && xml.status === 200) {
+                        console.log(JSON.stringify(thongTinThanhToan));
+                        console.log(xml.responseText);
+                        resolve("Thanh toán thành công");
+                    }
+                };
+                xml.open("POST", "./pages/xu-ly-cap-nhat-ve-da-mua.php", true);
+                xml.setRequestHeader('Content-Type', 'application/json');
+                xml.send(JSON.stringify(thongTinThanhToan));
+            }
+           
+            if (thongTinThanhToan.phuongthucthanhtoan == "Momo") {
+                xml.onreadystatechange = () => {
+                    if (xml.readyState === XMLHttpRequest.DONE && xml.status === 200) {
+                        console.log(JSON.stringify(thongTinThanhToan));
+                        console.log(xml.responseText);
+                        // resolve("Thanh toán thành công");
+                        window.location.href = xml.responseURL;
+                    }
+                };
+                xml.open("POST", "./pages/momoHandling.php", true);
+                xml.setRequestHeader('Content-Type', 'application/json');
+                xml.send(JSON.stringify(thongTinThanhToan));
+            }
+
         }
     });
 }

@@ -85,9 +85,9 @@
         <div class="menu-thanh-toan_container" id="phuong-thuc-thanh-toan">
             <div>CHỌN PHƯƠNG THỨC THANH TOÁN</div>
             <select>
-                <option value="Banking">Ngân Hàng</option>
+                <!-- <option value="Banking">Ngân Hàng</option> -->
                 <option value="Momo">Momo</option>
-                <option value="ZaloPay">ZaloPay</option>
+                <!-- <option value="ZaloPay">ZaloPay</option> -->
                 <option value="Cashing">Tiền Mặt</option>
             </select>
         </div>
