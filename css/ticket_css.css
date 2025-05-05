@@ -1,0 +1,392 @@
+
+
+/* ---------------------- */
+body {
+    font-family: Roboto,-apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main_lsmv{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.panel_filter{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    
+    position: sticky;
+    top: 64px; /* Dính phần trên của vùng phải vào đầu trang */
+    background-color: #fff;
+    padding: 10px 100px;
+}
+
+@media (max-width: 1000px) {
+    .panel_filter{
+        flex-direction: column;
+    }
+}
+
+.logo{
+    flex: 0.1;
+    display: flex;
+    
+}
+.logo_item{
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.panel_filter-tittle{
+    flex: 1.3;
+    line-height: 4rem;
+    font-size: 3.3rem;
+    font-weight: 900;
+    color: #000;
+    margin-left: 20px;
+}
+.panel_filter-wrap{
+    flex: 1;
+    display: flex;
+    
+}
+
+@media (max-width: 660px) {
+    .panel_filter-wrap{
+        flex-direction: column;
+    }
+    
+}
+
+.filter_cbb{
+    flex: 1;
+    margin: auto 10px;
+}
+
+.filter_cbb-item{
+    font-size: 1.7rem;
+}
+
+.filter_search{
+    display: flex;
+    position: relative;
+    flex: 1;
+    margin: auto 10px;
+
+}
+
+.search-item{
+    width: 100%;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 2px 30px 2px 5px;
+    border: 1px solid #999; /* Màu viền mặc định */
+    font-size: 1.7rem;
+    outline: 0;
+    margin-right: 0;
+}
+
+.search-icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+
+.ticket-history {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.no_ticket{
+    margin: auto;
+    color: #fff;
+    font-size: 4rem;
+}
+
+.ticket {
+    display: flex;
+    text-decoration: none;
+    color: #000;
+    align-items: center;
+    margin: 20px 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 40px);
+    background-color: #fff;
+}
+
+
+
+.ticket img {
+    max-width: 100px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.ticket-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.film_name{
+    margin: 4px 5px;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.text_ticket{
+    margin: 0 5px;
+    font-size: 1.7rem;
+}
+
+/* --------------------------------------VE----------------------------------------- */
+
+
+.main_ve{
+    display: flex;
+    background-color: #ececec;
+    min-height: 100vh;
+}
+
+.app_side-left{
+    display: block;
+    margin-top: 20px;
+}
+
+.app_side-right{
+    display: flex;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.4);
+    min-height: 534px;
+}
+
+.label_tittle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+    border-radius: 5px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.4);
+    background-color: #fff;
+}
+.label_tittle-text{
+    font-size: 3.4rem;
+    font-weight: 700;
+}
+
+.info_user-wrap{
+    display: block;
+    margin-top: 22px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.4);
+    padding-bottom: 10px;
+}
+.info_user-tittle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+}
+.info_user-tittle-text{
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+
+.info-user_item{
+    display: flex;
+    margin: 20px 0;
+}
+.info-user_item-label{
+    display: flex;
+    flex: 1.2;
+    align-items: center;
+    justify-content: right;
+    padding: 0 20px;
+}
+.info-user_item-label_text{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.info-user_item-input{
+    display: flex;
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    width: 90%; 
+    border-bottom: 1px dotted #000; 
+    margin: 0 auto; 
+    margin-right: 10px;
+}
+
+
+.money_item-label{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: right;
+    padding: 0 20px;
+}
+
+.money_item-input{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    width: 90%; 
+    border-bottom: 1px dotted #000; 
+    margin: 0 auto; 
+    margin-right: 10px;
+}
+.info-user_item-input_text{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+/* ------------------------ */
+
+.ticket_side{
+    flex: 1;
+    border-right: 1px solid #000;
+    position: relative; 
+    
+}
+.food_side{
+    flex: 1;
+    position: relative;
+}
+
+.detail_item{
+    display: flex;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+
+
+.detail_item-label{
+    display: flex;
+    flex: 1.3;
+    align-items: center;
+    padding: 0 20px;
+}
+.detail_item-label_text{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.detail_item-content{
+    display: flex;
+    flex: 3;
+    align-items: center;
+    justify-content: end;
+    padding: 0 20px;
+}
+
+.Padding10{
+    padding:0 10px;
+}
+.detail_item-content_text{
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    height: 1.9rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.detail_item.horizontal-line{
+    width: 96%;
+    padding: 10px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    margin: 0 auto 1px;
+    align-self: flex-end;
+    /* margin-bottom: 10px; */
+}
+
+
+.detail_food-item{
+    margin: 20px 0;
+}
+.detail_food-item_name{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.detail_food-item_name-text{
+    font-size: 1.6rem;
+    font-weight: 500;
+
+}
+.detail_food-item_price{
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    padding: 3px 20px;
+}
+
+.detail_food-item_price-multi{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.detail_food-item_quantity,.detail_food-item_cost,.detail_food-item_price-total_text{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.detail_food-item_price-total{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex: 1;
+}
+.padding_bottom{
+    padding-bottom: 70px;
+}
+.ggg{
+    position: absolute;
+    bottom: 26px;
+    left: 9px;
+}
+.btn_back-wrap{
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: end;
+}
+.btn_back{
+    padding: 15px 30px;
+    font-size: 2.4rem;
+    font-weight: 600;
+    background-color: #79B791;
+    border-radius: 5px;
+}
+
+.btn_back:hover{
+    background-color: rgba(121, 183, 145,0.7);
+    color: #595757;
+    cursor: pointer;
+}
+

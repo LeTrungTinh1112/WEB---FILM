@@ -1,0 +1,79 @@
+*{
+    font-family: Roboto,-apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
+  }
+  
+#chartContainer .canvasjs-chart-credit {
+    display: none;
+}
+
+#chartContainer {
+    max-width: 0 auto;
+    width: 1225px; 
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#chartContainer .canvasjs-chart-container {
+    width: auto; 
+}
+
+#chartContainer .canvasjs-chart-container .canvasjs-chart-canvas {
+    width: auto; 
+}
+
+#chartContainer .canvasjs-chart-canvas {
+    min-width: 600px; 
+}
+
+#dateForm {
+    padding: 20px;
+    text-align: right;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    background: #ffff;
+}
+
+#dateForm button{
+    color: #000000;
+    background: #939393;
+    border: 1px solid #f0f0f0;
+    padding: 2px;
+    cursor: pointer;
+    padding: 6px 20px;
+    font-weight: 600;
+    margin-left: 10px;
+    border-radius: 6px;
+    box-shadow: 0 3px 5px 0 rgb(0 0 0 / 4%);
+}
+
+#dateForm button:hover{
+    background-color: black;
+    color:white;
+}
+
+#dateForm select {
+    margin-right: 20px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px 0 rgb(0 0 0 / 4%);
+    border: 1px solid #cbcbcb;
+}
+
+#dateForm input {
+    padding: 3px 10px;
+    margin-right: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px 0 rgb(0 0 0 / 4%);
+    border: 1px solid #cbcbcb;
+}
+
+.thongke__container {
+    width: 98%;
+    margin: 4px auto;
+}
+
+.type {
+    display: inline;
+}
