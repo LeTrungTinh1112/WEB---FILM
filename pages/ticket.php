@@ -293,7 +293,18 @@ $conn->disconnect();
                                     </span>
                                 </div>
                             </div>
-
+                            <div class="detail_item">
+                                <div class="detail_item-label" style="flex:2;">
+                                    <span class="detail_item-label_text">
+                                        Phương Thức Thanh Toán
+                                    </span>
+                                </div>
+                                <div class="detail_item-content">
+                                    <span class="detail_item-content_text">
+                                    <?php echo $row["PHUONGTHUCTHANHTOAN"]; ?>
+                                    </span>
+                                </div>
+                            </div>
                             <div class="detail_item">
                                 <div class="detail_item-label" style="flex:2;">
                                     <span class="detail_item-label_text">

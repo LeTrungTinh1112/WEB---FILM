@@ -1,4 +1,5 @@
 <?php
+// TAO QR, LUU THONG TIN THANH TOAN VAO SESSION, NMA CHUA CAP NHAT SQL
 session_start();
 header('Content-type: text/html; charset=utf-8');
 header('Access-Control-Allow-Headers: *');
