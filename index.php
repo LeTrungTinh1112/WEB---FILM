@@ -64,6 +64,9 @@
                 include "./pages/chi-tiet-phim.php";   
                 echo '<script defer src="./js/chi-tiet-film.js"></script>';
                 break;
+            case 'momoPage.php':
+                include "./pages/momoPage.php";   
+                break;    
         }
     }else{
         include "./pages/home.php";

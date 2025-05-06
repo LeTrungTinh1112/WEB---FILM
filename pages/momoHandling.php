@@ -75,7 +75,7 @@ if (empty($_POST)) {
     // Gửi yêu cầu POST
     $result = execPostRequest($endpoint, json_encode($data));
     $jsonResult = json_decode($result, true);  // decode json
-    
+    addTicketToSession($data2); // Lưu thông tin vé vào session
     // Kiểm tra nội dung của $jsonResult
     if (isset($jsonResult['payUrl'])) {
         // Chuyển hướng đến URL thanh toán
@@ -100,6 +100,10 @@ if (isset($_GET['resultCode'])) {
         echo "Thanh toán thất bại!";
         
     }
+}
+function addTicketToSession($data2){
+     // Truy xuất các phần tử của mảng $data và gán cho các biến tương ứng
+     $_SESSION['data2'] = $data2; // Lưu thông tin vé vào session
 }
 function updateDataBase($data2){
     if ($data2 !== null) {
