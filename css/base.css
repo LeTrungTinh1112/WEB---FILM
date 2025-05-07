@@ -176,7 +176,7 @@ ul {
 .header__list {
     display: none;
     position: absolute;
-    top: 110%;
+    top: 90%;
     left: -400%;
     background-color: #ffffff;
     border: 1px solid #e8e8e8;
@@ -184,7 +184,23 @@ ul {
     box-shadow: 0 3px 5px 0 rgb(0 0 0 / 4%);
     width: 150px;
     z-index: 2;
-    margin-top: 3px;
+    margin-top: 1px;
+    text-align: center;
+    color:#000;
+}
+
+.header__listn {
+    display: none;
+    position: absolute;
+    top: 90%;
+    /* left: -400%; */
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px 0 rgb(0 0 0 / 4%);
+    width: 150px;
+    z-index: 2;
+    margin-top: 1px;
     text-align: center;
     color:#000;
 }
@@ -209,7 +225,24 @@ ul {
     color:black;
 }
 
+
 .header__menu li:last-child .header__list a {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color:black;
+}
+
+.header__menu li:last-child:hover .header__listn {
+    display: block;
+    background-color: white;
+    color:black;
+}
+
+
+.header__menu li:last-child .header__listn a {
     display: block;
     font-weight: 500;
     font-size: 14px;
