@@ -27,7 +27,7 @@ if($maquyen!="QKH"){
         <a href="#" class="avatar_DN">
             <img src="./img/'.$tenAnh.'"alt="Mô tả hình ảnh">
         </a>
-        <div class="header__list">
+        <div class="header__listn">
         <a href="index.php?pages=contentUser.php">Thông tin <i
                 class="fa-solid fa-circle-info"></i></a>
                 <a href="index.php?pages=history_ticket.php">Lịch sử vé
