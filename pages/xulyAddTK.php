@@ -68,7 +68,7 @@
         }else if($resultSDT->num_rows > 0){
             $count++;
             $error .= "&errorSDT=exist";
-        }else if(!preg_match('/^0\d{10}$/', $SODIENTHOAI)){
+        }else if(!preg_match('/^0\d{9}$/', $SODIENTHOAI)){
             $count++;
             $error .= "&errorSDT=char";
         }else{
