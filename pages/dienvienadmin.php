@@ -1,215 +1,148 @@
-<style>
-    .actor__wrap {
-        justify-content: space-evenly;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            background: #fff;
-        }
+<?php
+$list = actorList();
+echo '<div id="actor_wrap" style="padding: 20px;">';
 
-        .actor__item {
-            width: 19%;
-            margin: 20px;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            padding: 15px;
-            position: relative;
-        }
+// Thêm phần tìm kiếm và nút "Thêm diễn viên"
+echo '<div style="margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center;">';
+// Phần tìm kiếm
+echo '<div style="display: flex; align-items: center;">';
+echo '<input type="text" id="searchInput" placeholder="Tìm kiếm diễn viên..." style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin-right: 5px;">';
+echo '<button onclick="searchActors()" style="padding: 8px 15px; background-color: #2196F3; color: white; border: none; border-radius: 4px; cursor: pointer;">';
+echo '<i class="fa-solid fa-search fa-fw"></i> Tìm kiếm';
+echo '</button>';
+echo '</div>';
 
-        .actor_img {
-            width: 100%;
-            height:280px;
-        }
+// Nút thêm diễn viên
+echo '<button onclick="openAddModal()" style="padding: 8px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">';
+echo '<i class="fa-solid fa-plus fa-fw"></i> Thêm diễn viên';
+echo '</button>';
+echo '</div>';
 
-        .actor_img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+echo '<table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse:collapse;">';
+echo '<thead>';
+echo '<tr>';
+echo '<th>Hình ảnh</th>';
+echo '<th>Mã diễn viên</th>';
+echo '<th>Tên diễn viên</th>';
+echo '<th>Tác vụ</th>';
+echo '</tr>';
+echo '</thead>';
+echo '<tbody id="actorTableBody">';
 
-        .actor__name {
-            text-align: center;
-            font-size: 18px;
-            font-weight: 600;
-            padding-top: 5px;
-        }
+foreach ($list as $item) {
+    echo '<tr>';
+    echo '<td><img src="./img/' . $item['NAMEANH'] . '" style="max-width:100px; max-height:100px;"></td>';
+    echo '<td>' . $item['MADV'] . '</td>';
+    echo '<td>' . $item['TENDV'] . '</td>';
+    echo '<td style="white-space: nowrap;">';
+    echo '<button onclick="openEditModal(\'' . $item['MADV'] . '\')" style="padding: 5px 10px; margin-right: 5px; background-color: #2196F3; color: white; border: none; border-radius: 4px; cursor: pointer;">';
+    echo '<i class="fa-solid fa-pen-to-square fa-fw"></i> Sửa';
+    echo '</button>';
+    echo '<button onclick="confirmDelete(\'' . $item['MADV'] . '\', \'' . $item['TENDV'] . '\')" style="padding: 5px 10px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">';
+    echo '<i class="fa-solid fa-trash-can fa-fw"></i> Xóa';
+    echo '</button>';
+    echo '</td>';
+    echo '</tr>';
+}
 
-        .actor__item:hover .actor__name {
-            color: #79B791;
-        }
+echo '</tbody>';
+echo '</table>';
+echo '</div>';
 
-        .actor__icon {
-            content: "";
-            position: absolute;
-            top: 5px;
-            right: 8px;
-            background: #fff;
-            padding: 5px;
-            border-radius: 6px;
-            border: 1px solid #79B791;
-        }
-
-        .actor__icon i {
-            color:#79B791;
-            font-size: 18px;
-        }
-
-        .detail-actor__container {
-            margin: 20px auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            background: #fff;
-            padding: 20px;
-            position: relative;
-        }
-
-        .detail-actor__table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .detail-actor__table th {
-            background-color: #79B791;
-            color: #fff;
-            padding: 12px 0;
-        }
-
-        .detail-actor__table td {
-            padding: 12px 0;
-        }
-
-        .detail-actor__table td img {
-            max-width: 100%;
-            height: 160px;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .detail-actor__table input[type="text"] {
-            width: calc(100% - 24px);
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .detail-actor__table th,
-        .detail-actor__table td:first-child {
-            width: 30%;
-        }
-
-        .detail-actor__btn {
-            text-align: center;
-        }
-
-        .detail-actor__btn button {
-            padding: 6px 10px;
-            border: none;
-            background-color: #79B791;
-            color: #fff;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .detail-actor__icon {
-            position: absolute;
-            top: 7%;
-            right: 10%;
-            font-size: 24px;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .detail-actor.show {
-            display: block;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-        }
-
-        .detail-actor {
-            display: none;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            display: none;
-        }
-</style>
-
-<div class="actor__wrap">
-    <?php
-        $list = actorList();
-        foreach($list as $item) {
-            echo '<div class="actor__item" id="'.$item['MADV'].'">';
-            echo '<div class="actor_img">';
-            echo '<img src="./img/'.$item['NAMEANH'].'" alt="">';
-            echo '</div>';
-            echo '<div class="actor__icon"><i class="fa-regular fa-pen-to-square"></i></div>';
-            echo '<div class="actor__name">'.$item['TENDV'].'</div>';
-            echo '</div>';
-        }
-    ?>
-     <div class="detail-actor">
-            <div class="detail-actor__container">
-                <div class="detail-actor__icon" id="closeIcon">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-                <table class="detail-actor__table">
-                    <thead>
-                        <tr>
-                            <th colspan="2">Thông tin diễn viên</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mã diễn viên:</td>
-                            <td>MDV91</td>
-                        </tr>
-                        <tr>
-                            <td>Tên diễn viên:</td>
-                            <td><input type="text" value="Minhta"></td>
-                        </tr>
-                        <tr>
-                            <td>Hình ảnh</td>
-                            <td><img src="./img/Oanhle2222.png" alt=""></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="detail-actor__btn" >
-                    <button>Cập nhật</button>
-                </div>
+// Modal thêm/sửa diễn viên
+echo '
+<div id="actorModal" style="display:none; position:fixed; z-index:100; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.4);">
+    <div style="background-color:#fefefe; margin:5% auto; padding:20px; border:1px solid #888; width:50%;">
+        <span onclick="closeModal()" style="float:right; cursor:pointer; font-size:28px; font-weight:bold;">&times;</span>
+        <h2 id="modalTitle">Thêm diễn viên mới</h2>
+        <form id="actorForm">
+            <input type="hidden" id="madv">
+            <div style="margin-bottom:15px;">
+                <label style="display:block; margin-bottom:5px;">Tên diễn viên:</label>
+                <input type="text" id="tendv" style="width:100%; padding:8px;">
             </div>
-        </div>
-        <div class="overlay" id="overlay"></div>
+            <div style="margin-bottom:15px;">
+                <label style="display:block; margin-bottom:5px;">Hình ảnh:</label>
+                <input type="file" id="image" accept="image/*">
+            </div>
+            <button type="button" onclick="saveActor()" style="padding:10px 15px; background-color:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer;">Lưu</button>
+        </form>
     </div>
 </div>
+';
 
-
-<?php
-    function actorList(){
-        $list = array();
-        require_once('./database/connectDatabase.php');
-        $conn = new connectDatabase();
-
-        $query = "SELECT * FROM dienvien";
-        $result = $conn->executeQuery($query);
-        if($result){
-            while($row = $result->fetch_assoc()){
-                $list[] = $row;
-            }
-        } else{
-            return;
+// JavaScript xử lý các hành động
+echo '
+<script>
+// Hàm tìm kiếm diễn viên
+function searchActors() {
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    const rows = document.querySelectorAll("#actorTableBody tr");
+    
+    rows.forEach(row => {
+        const actorName = row.cells[2].textContent.toLowerCase(); // Cột tên diễn viên
+        const actorCode = row.cells[1].textContent.toLowerCase(); // Cột mã diễn viên
+        
+        if (actorName.includes(searchTerm) || actorCode.includes(searchTerm)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
         }
-        return $list;
+    });
+}
+
+// Cho phép tìm kiếm khi nhấn Enter
+document.getElementById("searchInput").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        searchActors();
     }
-?>
+});
+
+function openAddModal() {
+    document.getElementById("modalTitle").innerText = "Thêm diễn viên mới";
+    document.getElementById("madv").value = "";
+    document.getElementById("tendv").value = "";
+    document.getElementById("image").value = "";
+    document.getElementById("actorModal").style.display = "block";
+}
+
+function openEditModal(madv) {
+    document.getElementById("modalTitle").innerText = "Sửa diễn viên";
+    document.getElementById("actorModal").style.display = "block";
+    // Chức năng lấy dữ liệu chi tiết sẽ được phát triển sau
+}
+
+function closeModal() {
+    document.getElementById("actorModal").style.display = "none";
+}
+
+function saveActor() {
+    alert("Chức năng lưu đang được phát triển");
+}
+
+function confirmDelete(madv, tendv) {
+    if (confirm(`Bạn có chắc chắn muốn xóa diễn viên "${tendv}" (${madv}) không?`)) {
+        alert("Chức năng xóa đang được phát triển");
+    }
+}
+</script>
+';
+
+function actorList()
+{
+    $list = array();
+    require_once('./database/connectDatabase.php');
+    $conn = new connectDatabase();
+
+    $query = "SELECT * FROM dienvien";
+    $result = $conn->executeQuery($query);
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $list[] = $row;
+        }
+    } else {
+        echo 'Thất bại';
+        return null;
+    }
+    return $list;
+}

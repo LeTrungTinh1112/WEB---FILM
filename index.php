@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/trangchu.css">
     <?php
@@ -12,9 +14,9 @@
         $pages = $_GET['pages'];
         switch ($pages) {
             case 'contentUser.php':
-                echo'<link rel="stylesheet" href="./css/base_user.css">
+                echo '<link rel="stylesheet" href="./css/base_user.css">
                      <link rel="stylesheet" href="./css/user.css">';
-                     
+
                 break;
             case 'discount.php':
                 echo '<link rel="stylesheet" href="./css/base.css">
@@ -39,14 +41,14 @@
 
 <body>
     <?php
-        include "./pages/header.php";
-     ?>
+    include "./pages/header.php";
+    ?>
 
     <?php
-    
-    if(isset($_GET['pages'])){
-        $pages=$_GET['pages'];
-        switch($pages){
+
+    if (isset($_GET['pages'])) {
+        $pages = $_GET['pages'];
+        switch ($pages) {
             case 'discount.php':
                 include "./pages/discount.php";
                 echo '<script src="./js/discount.js"></script>';
@@ -61,21 +63,22 @@
                 include "./pages/ticket.php";
                 break;
             case 'chi-tiet-phim.php':
-                include "./pages/chi-tiet-phim.php";   
+                include "./pages/chi-tiet-phim.php";
                 echo '<script defer src="./js/chi-tiet-film.js"></script>';
                 break;
             case 'momoPage.php':
-                include "./pages/momoPage.php";   
-                break;    
+                include "./pages/momoPage.php";
+                break;
         }
-    }else{
+    } else {
         include "./pages/home.php";
         echo '<script src="./js/trangChujs.js"></script>';
     }
     include "./pages/footer.php";
     ?>
-    
-    
+
+
 </body>
 <script src="./js/header.js"></script>
+
 </html>

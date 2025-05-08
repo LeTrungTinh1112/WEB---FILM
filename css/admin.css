@@ -210,7 +210,7 @@ ul{
 #searchadmin input{
     display: inline;
     border: 1px solid gray;/*sáng*/
-    
+    border-radius: 5px;
     outline: none;
     
 }
@@ -338,7 +338,6 @@ ul{
 #dichvu_wrap{
     width: 90%;
     display: grid;
-    grid-template-columns: 50% 50%;
     justify-content: center;
     transform: translateX(5%);
 }
@@ -346,10 +345,8 @@ ul{
     border-radius: 10px;
     width: 90%;
     padding: 10px;
-   background-color: white;/*sáng*/
-   
-   
-   box-shadow: 0 0 5px 0 gray;
+    background-color: white;/*sáng*/
+    box-shadow: 0 0 5px 0 gray;
     margin: 20px 10px;
     display: flex;
     
@@ -454,7 +451,6 @@ ul{
     position: absolute;
     z-index: 2;
     width: 40px;
-    background-color: var(--light-gray);
     opacity: 0.5;
     color: black;
     display: flex;
