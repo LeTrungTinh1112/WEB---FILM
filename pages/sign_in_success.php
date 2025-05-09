@@ -18,6 +18,7 @@
                 </ul>
                 <br>
                 <b>Hãy bắt đầu hành trình điện ảnh của bạn ngay hôm nay!</b>
+                <a class="form-signin" href="./log_sign.php?pages=log_in" style="color: red; font-size: 18px; font-weight: bold;">Đăng nhập</a>
                 </p>
             </div>
         </div>

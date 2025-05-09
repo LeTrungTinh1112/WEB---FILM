@@ -32,7 +32,8 @@
                     if(isset($_GET['pass'])&&$_GET['pass']=='KhongToanTai'){
                         echo "Email không tồn tại";
                     }else if(isset($_GET['pass'])&&$_GET['pass']!='KhongToanTai'){
-                        echo "Mật khẩu của bạn là: ".$_GET['pass'] ;
+                        //echo "Mật khẩu của bạn là: ".$_GET['pass'] ;
+                        echo '<span style="color: red; font-size: 25px;">Mật khẩu của bạn là: ' . $_GET['pass'] . '</span>';
                     }
                     ?>
                 </span>
