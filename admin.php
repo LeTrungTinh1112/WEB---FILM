@@ -46,6 +46,7 @@ if (!isset($_SESSION['TenDN'])) {
             if (isset($_GET['page'])) {
                 $valid_pages = [
                     'moviesadmin',
+                    'moviesadmin',
                     'lichchieuphimadmin',
                     'dienvienadmin',
                     'ngayleadmin',

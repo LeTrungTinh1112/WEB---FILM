@@ -275,22 +275,23 @@ echo '<ul name="' . $current_page . '">';
 // Nút Previous
 if ($current_page > 1) {
     $prev_page = $current_page - 1;
-    echo "<li><a href='/pages/moviesadmin.php?index=$prev_page'>Previous</a></li>";
+    // echo "<li><a href='./admin.php?page=moviesadmin&index=$prev_page'>Previous</a></li>";
+    echo "<button id='btn_prev' name='btn_prev' onclick="."window.location.href='./admin.php?page=moviesadmin&index=$prev_page'>Previous</button>";
 }
 
 // Hiển thị các trang
 for ($i = 1; $i <= $total_pages; $i++) {
     if ($i == $current_page) {
-        echo "<li id='active'><a href='/pages/moviesadmin.php?index=$i'>$i</a></li>";
+        echo "<li id='active'><a href='./admin.php?page=moviesadmin.php&index=$i'>$i</a></li>";
     } else {
-        echo "<li><a href='/pages/moviesadmin.php?index=$i'>$i</a></li>";
+        echo "<li><a href='./admin.php?page=moviesadmin&index=$i'>$i</a></li>";
     }
 }
 
 // Nút Next
 if ($current_page < $total_pages) {
     $next_page = $current_page + 1;
-    echo "<li><a href='/pages/moviesadmin.php?index=$next_page'>Next</a></li>";
+    echo "<li><a href='./admin.php?page=moviesadmin&index=$next_page'>Next</a></li>";
 }
 
 echo '</ul>';
